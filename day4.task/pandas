@@ -1,0 +1,45 @@
+import pandas as pd
+
+data = {
+    "Name": ["Ali", "Sara", "Ahmed", "Fatima", "Usman"],
+    "Age": [22, 21, 23, 24, 22],
+    "Marks": [85, 90, 78, 95, 72]
+}
+df = pd.DataFrame(data)
+print(df)
+
+
+#Display the first three rows using head().
+print(df.head(3))
+
+
+#Display only the Name column.
+print(df["Name"])
+
+
+#Find students who scored more than 80 marks.
+high_marks = df[df["Marks"] > 80]
+print(high_marks)
+
+
+#Calculate the average marks using mean().
+average = df["Marks"].mean()
+print("Average Marks:", average)
+
+
+#Sort students by marks in descending order.
+sorted_df = df.sort_values(by="Marks", ascending=False)
+print(sorted_df)
+
+
+#Add a new column called Grade.
+df["A", "B", "C", "F"]
+print(df)
+
+#Display the number of rows and columns using shape.
+print("Shape:", df.shape)
+print("Rows:", df.shape[0])
+print("Columns:", df.shape[1])
+
+
+

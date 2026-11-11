@@ -1,0 +1,44 @@
+#Create a NumPy array containing numbers from 1 to 10.
+import numpy as np
+
+arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+print(arr)
+
+#Create an array of five zeros.
+import numpy as np
+
+arr = np.zeros(5)
+
+print(arr)
+
+#Find the maximum and minimum values of an array.
+import numpy as np
+
+arr = np.array([10, 20, 30, 40, 50])
+
+print("Maximum:", np.max(arr))
+print("Minimum:", np.min(arr))
+
+
+#Calculate the average of [10, 20, 30, 40, 50].
+import numpy as np
+
+arr = np.array([10, 20, 30, 40, 50])
+
+average = np.mean(arr)
+
+print("Average:", average)
+
+
+#Create a 2D array with 2 rows and 3 columns.
+import numpy as np
+
+arr = np.array([
+    [1, 2, 3],
+    [4, 5, 6]
+])
+
+print(arr)
+
+
