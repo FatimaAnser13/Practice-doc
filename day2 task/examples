@@ -1,0 +1,194 @@
+#Single inheritance
+class Father:
+    def skills(self):
+        print("Father knows gardening")
+
+class Son(Father):
+    def play(self):
+        print("Son likes playing cricket")
+
+obj = Son()
+
+obj.skills()
+obj.play()
+
+#Muliple inheritance
+class Father:
+    def skills1(self):
+        print("Father knows driving")
+
+class Mother:
+    def skills2(self):
+        print("Mother knows cooking")
+
+class Child(Father, Mother):
+    def skills3(self):
+        print("Child knows programming")
+
+obj = Child()
+
+obj.skills1()
+obj.skills2()
+obj.skills3()
+
+
+#Multilevel inh
+class Grandfather:
+    def house(self):
+        print("Grandfather owns a house")
+
+class Father(Grandfather):
+    def car(self):
+        print("Father owns a car")
+
+class Son(Father):
+    def bike(self):
+        print("Son owns a bike")
+
+obj = Son()
+
+obj.house()
+obj.car()
+obj.bike()
+
+
+#hiraricheal inheritance
+class Animal:
+    def eat(self):
+        print("Animals can eat")
+
+class Dog(Animal):
+    def bark(self):
+        print("Dog barks")
+
+class Cat(Animal):
+    def meow(self):
+        print("Cat meows")
+
+dog = Dog()
+cat = Cat()
+
+dog.eat()
+dog.bark()
+
+cat.eat()
+cat.meow()
+
+
+#hybrid inheritance
+class A:
+    def show_A(self):
+        print("Class A")
+
+class B(A):
+    def show_B(self):
+        print("Class B")
+
+class C(A):
+    def show_C(self):
+        print("Class C")
+
+class D(B, C):
+    def show_D(self):
+        print("Class D")
+
+obj = D()
+
+obj.show_A()
+obj.show_B()
+obj.show_C()
+obj.show_D()
+
+
+
+#super function
+class Parent:
+    def display(self):
+        print("This is parent class")
+
+class Child(Parent):
+    def display(self):
+        super().display()
+        print("This is child class")
+
+obj = Child()
+obj.display()
+
+
+
+#method overriding
+class Animal:
+    def sound(self):
+        print("Animal makes a sound")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+
+obj = Dog()
+obj.sound()
+
+
+
+#MRO METHOD
+class A:
+    pass
+
+class B(A):
+    pass
+
+class C(A):
+    pass
+
+class D(B, C):
+    pass
+
+print(D.mro())
+class A:    passclass B(A):    passclass C(A):    passclass D(B, C):    passprint(D.mro())
+
+
+
+
+#Overrriding
+class Animal:
+    def sound(self):
+        print("Animals make sounds")
+
+class Dog(Animal):
+    def sound(self):
+        print("Dog barks")
+
+class Cat(Animal):
+    def sound(self):
+        print("Cat meows")
+
+
+dog = Dog()
+cat = Cat()
+
+dog.sound()
+cat.sound()
+
+
+#overloading
+#Example using default arguments:
+class Calculator:
+
+    def add(self, a, b=0, c=0):
+        return a + b + c
+
+
+obj = Calculator()
+
+print(obj.add(5, 10))
+print(obj.add(5, 10, 15))
+print(obj.add(5))
+
+
+
+num = int(input("Enter number: "))
+while num < 100:
+    print("Number:", num)
+    num = int(input("Enter number: "))
+
+print("Loop stopped")
