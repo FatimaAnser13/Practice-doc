@@ -1,0 +1,129 @@
+def my_decorator(func): #receives another function as an argument.
+    def wrapper():#add extra function
+        print("Before function execution")
+        func() #call original func
+        print("After function execution")
+    return wrapper #returns the modify func
+
+@my_decorator #applies the decorator to say_hello()
+def say_hello():
+    print("Hello World!")
+
+
+say_hello() 
+
+#momoriozation using decorator
+def memoize(func):
+    cache = {}
+
+    def wrapper(n):
+        if n in cache:
+            print("Getting result from cache")
+            return cache[n]
+
+        print("Calculating result")
+        result = func(n)
+        cache[n] = result
+        return result
+
+    return wrapper
+
+
+@memoize
+def square(n):
+    return n * n
+
+
+print(square(5))
+print(square(5))
+print(square(5))
+
+
+
+#chaining decorator
+def decorator1(func):
+    def wrapper():
+        print("Decorator 1: Start")
+        func()
+        print("Decorator 1: End")
+    return wrapper
+
+
+def decorator2(func):
+    def wrapper():
+        print("Decorator 2: Start")
+        func()
+        print("Decorator 2: End")
+    return wrapper
+
+
+@decorator1
+@decorator2
+def hello():
+    print("Hello Python!")
+
+
+hello()
+
+
+
+#multithreading
+import threading
+import time
+
+def task(name):
+    print(name, "started")
+    time.sleep(2)
+    print(name, "finished")
+
+t1 = threading.Thread(target=task, args=("Task 1",))
+t2 = threading.Thread(target=task, args=("Task 2",))
+
+t1.start()
+t2.start()
+
+t1.join()
+t2.join()
+
+print("All tasks completed")
+
+
+#Multiprocessing
+
+
+
+
+
+
+
+#array
+import numpy as np
+
+numbers = np.array([10, 20, 30, 40, 50])
+
+print(numbers)
+
+
+#Mathematical Operations in NumPy
+import numpy as np
+a = np.array([10, 20, 30])
+b = np.array([1, 2, 3])
+
+print(a + b)
+print(a - b)
+print(a * b)
+print(a / b)
+
+
+
+#NumPy func
+import numpy as np
+arr = np.array([10, 20, 30, 40, 50])
+
+print(np.sum(arr))
+print(np.mean(arr))
+print(np.max(arr))
+print(np.min(arr))
+
+
+
